@@ -44,7 +44,7 @@ const UpdateActivity = (props) => {
                     variant: 'success'
                 })
             })
-            .then(() => triggerRefresh())
+            .then(res => { navigate(`/user-page`)})
             .catch((error) => {
                 msgAlert({
                     heading: 'Failure',

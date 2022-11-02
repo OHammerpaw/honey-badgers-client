@@ -73,7 +73,7 @@ const CreateActivity = ({ user,  msgAlert, handleClose, triggerRefresh }) => {
             handleChange={ handleChange }
             heading="Create a new Activity!"
             handleSubmit={ handleCreateActivity }
-            handleClose={() => setActivityModalShow(false)}
+             
         />
     
     )

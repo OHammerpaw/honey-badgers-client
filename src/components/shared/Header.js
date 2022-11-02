@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Menu, Icon, Sticky, Modal } from 'semantic-ui-react'
+import { Menu, Icon, Sticky, Modal, Button } from 'semantic-ui-react'
 import CreateActivity from '../activities/CreateActivity'
 import UserPublicPage from '../user/UserPublicPage'
 import { Link } from 'react-router-dom'
@@ -48,8 +48,8 @@ export default class Header extends Component {
 			<Menu.Menu position='right'>
 				
 				 <Modal
-					onClose={() => this.setState({setOpen: false})}
-					onOpen={() => this.setState({setOpen: true})}
+					// onClose={() => this.setState({setOpen: false})}
+					// onOpen={() => this.setState({setOpen: true})}
 					// open={open}
 					trigger={
 						<Menu.Item 
@@ -64,8 +64,12 @@ export default class Header extends Component {
 						</Menu.Item>}
        			 >
 					<Modal.Content>
-						<CreateActivity user={this.props.user} msgAlert={this.props.msgAlert}  />
+						<CreateActivity user={this.props.user} msgAlert={this.props.msgAlert} onClose={() => this.setState({setOpen: false})} />
 					</Modal.Content>
+					<Modal.Actions>
+						<Button class="ui circular icon button"><Icon name='random' /></Button>
+                		<Button type='submit' onClick={() => this.setState({setOpen: false})}>Submit</Button>
+					</Modal.Actions>
         		</Modal>
 				<Menu.Item
 					name='my public profile'
